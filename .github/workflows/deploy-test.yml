@@ -10,7 +10,14 @@ env:
 
 jobs:
   build:
+    environment: ${{ env.ENVIRONMENT }}
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:
-      - run: echo "Placeholder - steps to complete TEST deployment would go here..."
+      - run: echo "Placeholder - steps to complete TEST BUILD would go here..."
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Placeholder - steps to complete TEST DEPLOYMENT would go here..."

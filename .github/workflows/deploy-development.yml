@@ -1,0 +1,13 @@
+name: Deploy Development
+
+on: pull_request
+
+env:
+  ENVIRONMENT: dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Placeholder - steps to complete DEV deployment would go here..."

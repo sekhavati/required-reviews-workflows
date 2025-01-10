@@ -1,0 +1,17 @@
+name: Deploy Prod
+
+on:
+  workflow_run:
+    workflows: ["Deploy Staging"]
+    types:
+      - completed
+
+env:
+  ENVIRONMENT: prod
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Placeholder - steps to complete PRODUCTION deployment would go here..."

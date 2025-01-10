@@ -1,0 +1,17 @@
+name: Deploy Staging
+
+on:
+  workflow_run:
+    workflows: ["Deploy Test"]
+    types:
+      - completed
+
+env:
+  ENVIRONMENT: stage
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Placeholder - steps to complete STAGING deployment would go here..."

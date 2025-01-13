@@ -13,6 +13,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     environment: "prod"
     steps:
       - run: echo "Placeholder - steps to complete PROD BUILD would go here..."

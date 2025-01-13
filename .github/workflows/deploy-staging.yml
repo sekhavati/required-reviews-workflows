@@ -17,6 +17,12 @@ jobs:
     steps:
       - run: echo "Placeholder - steps to complete STAGE BUILD would go here..."
       - run: echo ${{ github.ref }}
+      - run: echo ${{ github.ref_name }}
+      - run: echo ${{ github.ref_type }}
+      - run: echo ${{ github.sha }}
+      - run: echo ${{ github.event }}
+      - run: echo ${{ github.head_ref }}
+      - run: echo ${{ github.base_ref }}
 
   deploy:
     needs: [build]

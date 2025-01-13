@@ -17,7 +17,6 @@ jobs:
     environment: "prod"
     steps:
       - run: echo "Placeholder - steps to complete PROD BUILD would go here..."
-      - run: echo ${{ github.ref }}
 
   deploy:
     runs-on: ubuntu-latest

@@ -12,7 +12,6 @@ jobs:
     environment: "dev"
     steps:
       - run: echo "Placeholder - steps to complete DEV BUILD would go here..."
-      - run: echo ${{ github.ref }}
 
   deploy:
     runs-on: ubuntu-latest

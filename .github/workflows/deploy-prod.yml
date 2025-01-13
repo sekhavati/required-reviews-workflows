@@ -16,6 +16,8 @@ jobs:
     timeout-minutes: 2
     steps:
       - run: echo "Placeholder - steps to complete PROD BUILD would go here..."
+      - run: echo ${{ github.ref }}
+
   deploy:
     needs: [build]
     runs-on: ubuntu-latest

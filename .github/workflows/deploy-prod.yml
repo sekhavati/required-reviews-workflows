@@ -5,8 +5,6 @@ on:
     workflows: ["Deploy Staging"]
     types:
       - completed
-    tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+'
 
 env:
   ENVIRONMENT: prod

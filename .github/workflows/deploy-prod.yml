@@ -11,16 +11,16 @@ env:
 
 jobs:
   build:
-    environment: "prod"
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    environment: "prod"
     steps:
       - run: echo "Placeholder - steps to complete PROD BUILD would go here..."
       - run: echo ${{ github.ref }}
 
   deploy:
-    needs: [build]
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    needs: [build]
     steps:
       - run: echo "Placeholder - steps to complete PROD DEPLOYMENT would go here..."

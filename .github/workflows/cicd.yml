@@ -12,13 +12,13 @@ jobs:
       environment-to-deploy: "test"
 
   deploy-stage-env:
-    needs: [deploy-test]
+    needs: [deploy-test-env]
     uses: ./.github/workflows/deploy-environment.yml
     with:
       environment-to-deploy: "stage"
 
   deploy-prod-env:
-    needs: [deploy-stage]
+    needs: [deploy-stage-env]
     uses: ./.github/workflows/deploy-environment.yml
     with:
       environment-to-deploy: "prod"

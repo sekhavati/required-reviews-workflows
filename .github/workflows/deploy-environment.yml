@@ -26,5 +26,6 @@ jobs:
     if: inputs.environment-to-deploy != 'prod'
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    needs: [deploy]
     steps:
-      - run: echo "Production environment detected, this step will run"
+      - run: echo "Non-production environment detected, this step will run"

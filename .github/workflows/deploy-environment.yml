@@ -25,7 +25,7 @@ jobs:
   example-prod-only-job:
     runs-on: ubuntu-latest
     timeout-minutes: 2
-    if: ${{ inputs.environment-to-deploy == 'prod' }}
+    if: inputs.environment-to-deploy == 'prod'
       - run: echo "Production environment detected, this step will run"
     else:
       - run: echo "Not a production environment, this step will be skipped"

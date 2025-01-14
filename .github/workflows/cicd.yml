@@ -6,19 +6,19 @@ on:
       - 'v[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
-  deploy-test-env:
+  deploy-test:
     uses: ./.github/workflows/deploy-environment.yml
     with:
       environment-to-deploy: "test"
 
-  deploy-stage-env:
-    needs: [deploy-test-env]
+  deploy-stage:
+    needs: [deploy-test]
     uses: ./.github/workflows/deploy-environment.yml
     with:
       environment-to-deploy: "stage"
 
-  deploy-prod-env:
-    needs: [deploy-stage-env]
+  deploy-prod:
+    needs: [deploy-stage]
     uses: ./.github/workflows/deploy-environment.yml
     with:
       environment-to-deploy: "prod"

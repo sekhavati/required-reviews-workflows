@@ -18,6 +18,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 2
+    environment: ${{ inputs.environment-to-deploy }}
     needs: [build]
     steps:
       - run: echo "Placeholder - steps to complete ${{ inputs.environment-to-deploy }} DEPLOYMENT would go here..."

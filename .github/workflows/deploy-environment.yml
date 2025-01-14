@@ -22,8 +22,8 @@ jobs:
     steps:
       - run: echo "Placeholder - steps to complete ${{ inputs.environment-to-deploy }} DEPLOYMENT would go here..."
 
-  example-prod-only-job:
-    if: inputs.environment-to-deploy == 'prod'
+  integration-test:
+    if: inputs.environment-to-deploy != 'prod'
     runs-on: ubuntu-latest
     timeout-minutes: 2
     steps:

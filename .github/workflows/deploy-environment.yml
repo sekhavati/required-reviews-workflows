@@ -1,0 +1,31 @@
+name: Deploy Environment
+
+on:
+  workflow_call:
+    inputs:
+      environment-to-deploy:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    environment: ${{ inputs.environment-to-deploy }}
+    steps:
+      - run: echo "Placeholder - steps to complete ${{ inputs.environment-to-deploy }} BUILD would go here..."
+
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    needs: [build]
+    steps:
+      - run: echo "Placeholder - steps to complete ${{ inputs.environment-to-deploy }} DEPLOYMENT would go here..."
+
+  example-prod-only-job:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    if: ${{ inputs.environment-to-deploy == 'prod' }}
+      - run: echo "Production environment detected, this step will run"
+    else:
+      - run: echo "Not a production environment, this step will be skipped"
